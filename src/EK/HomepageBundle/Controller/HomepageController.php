@@ -10,9 +10,9 @@ class HomepageController extends Controller
 
 	public function viewAction($id) {
 
-		//test
+		
 
-		return new Response("salut : ".$id);
+		return new Response("Affichage de l'annonce d'id : ".$id);
 	}
 
 
