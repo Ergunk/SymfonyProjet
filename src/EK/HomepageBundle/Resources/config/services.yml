@@ -1,0 +1,4 @@
+services:
+#    ek_homepage.example:
+#        class: EK\HomepageBundle\Example
+#        arguments: ["@service_id", "plain_value", %parameter%]

@@ -1,0 +1,9 @@
+ek_homepage_home:
+    path:     /home
+    defaults: { _controller: EKHomepageBundle:Homepage:index }
+
+ek_homepage_view:
+    path:     /home/{id}
+    defaults: { _controller: EKHomepageBundle:Homepage:view }
+    requirements:
+        id:   \d{2}

@@ -1,0 +1,7 @@
+ek_homepage:
+    resource: "@EKHomepageBundle/Resources/config/routing.yml"
+    prefix:   /
+
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation
