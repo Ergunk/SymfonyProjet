@@ -12,7 +12,7 @@ class HomepageController extends Controller
 
 		//test
 
-		return new Response("Affichage de l'annonce d'id : ".$id);
+		return new Response("salut : ".$id);
 	}
 
 
