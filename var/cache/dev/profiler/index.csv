@@ -81,3 +81,8 @@ a05a13,::1,GET,http://localhost/symfony/web/app_dev.php/home,1462910862,,500
 bffccc,::1,GET,http://localhost/symfony/web/app_dev.php/home,1462911311,,500
 48f7b8,::1,GET,http://localhost/symfony/web/app_dev.php/home,1462911341,,200
 eb4cc8,::1,GET,http://localhost/symfony/web/app_dev.php/home,1462911438,,200
+2e4119,::1,GET,http://localhost/symfony/web/app_dev.php/,1462971744,,200
+3c95cd,::1,GET,http://localhost/symfony/web/app_dev.php/home/,1462971857,565b17,200
+565b17,::1,GET,http://localhost/symfony/web/app_dev.php/home/,1462971857,,404
+5e1585,::1,GET,http://localhost/symfony/web/app_dev.php/home,1462971862,,200
+0461d0,::1,GET,http://localhost/symfony/web/app_dev.php/core,1462971867,,200

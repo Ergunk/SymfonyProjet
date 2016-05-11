@@ -17,6 +17,7 @@
       <parameter key="SensioFrameworkExtraBundle">Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle</parameter>
       <parameter key="AppBundle">AppBundle\AppBundle</parameter>
       <parameter key="EKHomepageBundle">EK\HomepageBundle\EKHomepageBundle</parameter>
+      <parameter key="CoreBundle">CoreBundle\CoreBundle</parameter>
       <parameter key="DebugBundle">Symfony\Bundle\DebugBundle\DebugBundle</parameter>
       <parameter key="WebProfilerBundle">Symfony\Bundle\WebProfilerBundle\WebProfilerBundle</parameter>
       <parameter key="SensioDistributionBundle">Sensio\Bundle\DistributionBundle\SensioDistributionBundle</parameter>
@@ -1494,7 +1495,7 @@
       <argument type="collection">
         <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-            <argument>57322dec069c08.93562066</argument>
+            <argument>57332d2e3cbfa1.69449195</argument>
           </service>
         </argument>
       </argument>
@@ -1623,7 +1624,7 @@
         <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
             <argument type="service" id="security.token_storage"/>
-            <argument>57322dec069c08.93562066</argument>
+            <argument>57332d2e3cbfa1.69449195</argument>
             <argument type="service" id="monolog.logger.security" on-invalid="null"/>
             <argument type="service" id="security.authentication.manager"/>
           </service>
@@ -2010,7 +2011,9 @@
       <argument type="service">
         <service class="Doctrine\ORM\Configuration" public="false">
           <call method="setEntityNamespaces">
-            <argument type="collection"/>
+            <argument type="collection">
+              <argument key="EKHomepageBundle">EK\HomepageBundle\Entity</argument>
+            </argument>
           </call>
           <call method="setMetadataCacheImpl">
             <argument type="service" id="doctrine_cache.providers.doctrine.orm.default_metadata_cache"/>
@@ -2023,7 +2026,19 @@
           </call>
           <call method="setMetadataDriverImpl">
             <argument type="service">
-              <service class="Doctrine\Common\Persistence\Mapping\Driver\MappingDriverChain" public="false"/>
+              <service class="Doctrine\Common\Persistence\Mapping\Driver\MappingDriverChain" public="false">
+                <call method="addDriver">
+                  <argument type="service">
+                    <service class="Doctrine\ORM\Mapping\Driver\AnnotationDriver" public="false">
+                      <argument type="service" id="annotation_reader"/>
+                      <argument type="collection">
+                        <argument>C:\wamp\www\symfony\src\EK\HomepageBundle\Entity</argument>
+                      </argument>
+                    </service>
+                  </argument>
+                  <argument>EK\HomepageBundle\Entity</argument>
+                </call>
+              </service>
             </argument>
           </call>
           <call method="setProxyDir">
@@ -2412,6 +2427,10 @@
       <call method="addPath">
         <argument>C:\wamp\www\symfony\src\EK\HomepageBundle/Resources/views</argument>
         <argument>EKHomepage</argument>
+      </call>
+      <call method="addPath">
+        <argument>C:\wamp\www\symfony\src\CoreBundle/Resources/views</argument>
+        <argument>Core</argument>
       </call>
       <call method="addPath">
         <argument>C:\wamp\www\symfony\vendor\symfony\symfony\src\Symfony\Bundle\DebugBundle/Resources/views</argument>

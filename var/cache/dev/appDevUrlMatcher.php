@@ -100,6 +100,11 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
+        // core_homepage
+        if ($pathinfo === '/core') {
+            return array (  '_controller' => 'CoreBundle\\Controller\\DefaultController::indexAction',  '_route' => 'core_homepage',);
+        }
+
         if (0 === strpos($pathinfo, '/home')) {
             // ek_homepage_home
             if ($pathinfo === '/home') {
