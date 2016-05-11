@@ -8,6 +8,7 @@ class DefaultController extends Controller
 {
     public function indexAction()
     {
+        //comme
         return $this->render('EKHomepageBundle:Default:index.html.twig');
     }
 }
